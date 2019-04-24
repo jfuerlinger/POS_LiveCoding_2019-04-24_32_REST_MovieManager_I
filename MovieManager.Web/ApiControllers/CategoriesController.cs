@@ -16,6 +16,7 @@ namespace MovieManager.Web.ApiControllers
             _unitOfWork = unitOfWork;
         }
 
+        [HttpGet]
         public string[] GetCategories()
         {
 

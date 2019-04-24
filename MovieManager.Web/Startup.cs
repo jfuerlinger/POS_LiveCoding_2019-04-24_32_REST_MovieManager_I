@@ -26,22 +26,36 @@ namespace MovieManager.Web
             services.AddScoped<IUnitOfWork, UnitOfWork>(
                 serviceProvider => new UnitOfWork());
 
+            //services.AddSwaggerGen(configuration =>
+            //    {
+            //        configuration.SwaggerDoc(
+            //            "v1", new Info()
+            //            {
+            //                Title = "Movie Manager API",
+            //                Version = "v1",
+            //                Contact = new Contact()
+            //                {
+            //                    Name = "Josef Fürlinger",
+            //                    Email = "j.fuerlinger@htl-leonding.ac.at",
+            //                    Url = "https://github.com/jfuerlinger"
+            //                }
+            //            });
+            //    }
+            //);
+
             services.AddSwaggerGen(configuration =>
-                {
-                    configuration.SwaggerDoc(
-                        "v1", new Info()
+                configuration.SwaggerDoc(
+                    "v1", new Info()
+                    {
+                        Title = "Movie Manager API",
+                        Version = "v1",
+                        Contact = new Contact()
                         {
-                            Title = "Movie Manager API",
-                            Version = "v1",
-                            Contact = new Contact()
-                            {
-                                Name = "Josef Fürlinger",
-                                Email = "j.fuerlinger@htl-leonding.ac.at",
-                                Url = "https://github.com/jfuerlinger"
-                            }
-                        });
-                }
-            );
+                            Name = "Josef Fürlinger",
+                            Email = "j.fuerlinger@htl-leonding.ac.at",
+                            Url = "https://github.com/jfuerlinger"
+                        }
+                    }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,15 +73,21 @@ namespace MovieManager.Web
 
             app.UseHttpsRedirection();
 
+            app.UseMvc();
+
+            //app.UseSwagger();
+            //app.UseSwaggerUI(configuration =>
+            //{
+            //    configuration.SwaggerEndpoint("/swagger/v1/swagger.json", "Movie Manager API V1");
+            //    //configuration.RoutePrefix = string.Empty;
+            //});
 
             app.UseSwagger();
             app.UseSwaggerUI(configuration =>
             {
-                configuration.SwaggerEndpoint("/swagger/v1/swagger.json", "Movie Manager API V1");
-                //configuration.RoutePrefix = string.Empty;
+                configuration.SwaggerEndpoint("/swagger/v1/swagger.json", "MovieManager API V1");
+                configuration.RoutePrefix = string.Empty;
             });
-
-            app.UseMvc();
         }
     }
 }
