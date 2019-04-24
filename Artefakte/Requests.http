@@ -1,0 +1,6 @@
+### Alle Kategorien 
+GET http://localhost:54026/api/categories/
+
+
+### Alle Filme der Kategorie 3
+GET http://localhost:54026/api/categories/3/movies

@@ -15,6 +15,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManager.Web", "MovieMa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManager.Client.ConsoleApp", "MovieManager.Client.ConsoleApp\MovieManager.Client.ConsoleApp.csproj", "{16FE3EFC-FE47-41B0-A5CD-309F1C6257A7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Artefakte", "Artefakte", "{A22E72FF-42A7-4132-A3AF-37CFD838C9BF}"
+	ProjectSection(SolutionItems) = preProject
+		Artefakte\Requests.http = Artefakte\Requests.http
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
