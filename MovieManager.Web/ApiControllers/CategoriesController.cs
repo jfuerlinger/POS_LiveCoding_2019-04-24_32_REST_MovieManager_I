@@ -50,7 +50,5 @@ namespace MovieManager.Web.ApiControllers
 
             return resources;
         }
-
-
     }
 }
