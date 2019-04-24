@@ -1,4 +1,5 @@
-﻿using MovieManager.Core.Contracts;
+﻿using Microsoft.EntityFrameworkCore;
+using MovieManager.Core.Contracts;
 using MovieManager.Core.DTOs;
 using MovieManager.Core.Entities;
 using System;
@@ -31,7 +32,7 @@ namespace MovieManager.Persistence
         /// <returns></returns>
         public Category GetById(int id)
         {
-            return _dbContext.Categories.SingleOrDefault(c => c.Id == id);
+            return _dbContext.Categories.Include(c => c.Movies).SingleOrDefault(c => c.Id == id);
         }
 
 
