@@ -23,20 +23,30 @@ namespace MovieManager.Web.Controllers
                 .CategoryRepository
                 .GetAll()
                 .Select(c => c.CategoryName)
-                    .ToArray();
+                .ToArray();
         }
 
         [HttpGet]
         [Route("{id}/movies")]
-        public MovieDTO[] GetMoviesByCategory(int id)
+        public ActionResult<MovieDTO[]> GetMoviesByCategory(int id)
         {
-            return _unitOfWork.CategoryRepository.GetById(id)?.Movies
+            var category = _unitOfWork.CategoryRepository.GetById(id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+            var movies = category.Movies;
+            var resources = movies
                 .Select(m => new MovieDTO()
                 {
                     Title = m.Title,
                     Year = m.Year,
                     Category = m.Category?.CategoryName
-                }).ToArray();
+                })
+                .ToArray();
+
+            return resources;
         }
 
 
