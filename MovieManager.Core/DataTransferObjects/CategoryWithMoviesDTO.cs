@@ -1,7 +1,7 @@
 ﻿using MovieManager.Core.Entities;
 using System.Linq;
 
-namespace MovieManager.Web.DataTransferObjects
+namespace MovieManager.Core.DataTransferObjects
 {
     public class CategoryWithMoviesDTO
     {

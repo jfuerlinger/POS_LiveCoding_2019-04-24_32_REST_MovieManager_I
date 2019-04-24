@@ -1,4 +1,4 @@
-﻿namespace MovieManager.Web.DataTransferObjects
+﻿namespace MovieManager.Core.DataTransferObjects
 {
     public class MovieDTO
     {

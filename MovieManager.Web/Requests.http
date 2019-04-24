@@ -1,0 +1,4 @@
+﻿GET https://localhost:44307/api/Categories
+
+
+GET https://localhost:44307/api/Categories/3/movies

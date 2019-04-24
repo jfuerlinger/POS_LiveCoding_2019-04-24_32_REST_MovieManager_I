@@ -17,4 +17,8 @@
     <ProjectReference Include="..\MovieManager.Persistence\MovieManager.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DataTransferObjects\" />
+  </ItemGroup>
+
 </Project>
