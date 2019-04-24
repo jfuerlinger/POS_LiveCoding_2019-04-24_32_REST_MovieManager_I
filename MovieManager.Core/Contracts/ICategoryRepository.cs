@@ -13,5 +13,6 @@ namespace MovieManager.Core.Contracts
         CategoryStatisticEntry GetCategoryWithMostMovies();
         (Category Category, double AverageLength)[] GetCategoriesWithAverageLengthOfMovies();
         int GetYearWithMostPublicationsForCategory(string categoryName);
+        Category GetByIdWithMovies(int id);
     }
 }

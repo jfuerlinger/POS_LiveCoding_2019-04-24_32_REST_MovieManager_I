@@ -1,4 +1,5 @@
-﻿using MovieManager.Core.Contracts;
+﻿using Microsoft.EntityFrameworkCore;
+using MovieManager.Core.Contracts;
 using MovieManager.Core.DTOs;
 using MovieManager.Core.Entities;
 using System;
@@ -98,6 +99,14 @@ namespace MovieManager.Persistence
                     })
                 .OrderByDescending(movieGroupByYear => movieGroupByYear.CntOfMovies)
                 .First().Year;
+        }
+
+        public Category GetByIdWithMovies(int id)
+        {
+            return _dbContext
+                .Categories
+                .Include(c => c.Movies)
+                .FirstOrDefault(c => c.Id == id);
         }
 
 
