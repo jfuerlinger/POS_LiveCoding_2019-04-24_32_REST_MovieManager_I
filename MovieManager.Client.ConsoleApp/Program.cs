@@ -30,6 +30,7 @@ namespace MovieManager.Client.ConsoleApp
 
             JArray movies = JArray.Parse(response.Content);
 
+            Console.WriteLine();
             Console.WriteLine("Movies for Category 3:");
             Console.WriteLine("======================");
 
@@ -50,6 +51,7 @@ namespace MovieManager.Client.ConsoleApp
 
             JArray categories = JArray.Parse(response.Content);
 
+            Console.WriteLine();
             Console.WriteLine("Categories:");
             Console.WriteLine("===========");
             foreach (var category in categories)
